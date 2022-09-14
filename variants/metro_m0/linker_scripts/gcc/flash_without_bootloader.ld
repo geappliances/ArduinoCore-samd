@@ -138,11 +138,12 @@ SECTIONS
 		__zero_table_end__ = .;
 	} > FLASH
 	*/
-
+	. = ALIGN(4);
 	__etext = .;
 
 	.data : AT (__etext)
 	{
+		. = ALIGN(4);
 		__data_start__ = .;
 		*(vtable)
 		*(.data*)
